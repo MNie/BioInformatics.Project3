@@ -70,6 +70,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\BioInformatics.Project3.Core\BioInformatics.Project3.Core.csproj">
+      <Project>{3ea53ad8-2c08-475d-9dc4-2c9f76a30645}</Project>
+      <Name>BioInformatics.Project3.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
