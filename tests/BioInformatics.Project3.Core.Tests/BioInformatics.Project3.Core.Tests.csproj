@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\SequenceProviderSpecs.cs" />
+    <Compile Include="Providers\StatisticsProviderSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

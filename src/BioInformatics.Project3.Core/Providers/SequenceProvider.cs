@@ -27,7 +27,6 @@ namespace BioInformatics.Project3.Core.Providers
                 var parser = (ISequenceParser) Activator.CreateInstance(type);
 
                 sequences = parser.Parse(stream).ToList();
-
             }
             catch (Exception)
             {

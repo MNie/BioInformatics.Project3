@@ -10,6 +10,11 @@ namespace BioInformatics.Project3.Web.Modules
             {
                 return View["index"];
             };
+
+            Post["/Sequence/Parse"] = _ =>
+            {
+                return View["index"];
+            };
         }
     }
 }
