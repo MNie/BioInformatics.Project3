@@ -39,6 +39,14 @@
     <Reference Include="Bio.Desktop, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NetBioCore.PCL.2.0.150722\lib\net45\Bio.Desktop.dll</HintPath>
     </Reference>
+    <Reference Include="Bio.Padena, Version=2.0.5681.21500, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NetBioAlgorithms.PCL.2.0.150722\lib\Bio.Padena.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Bio.Pamsam, Version=2.0.5681.21502, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NetBioAlgorithms.PCL.2.0.150722\lib\Bio.Pamsam.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Bio.Platform.Helpers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NetBioCore.PCL.2.0.150722\lib\net45\Bio.Platform.Helpers.dll</HintPath>
     </Reference>
@@ -52,6 +60,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\Alignment\AlignedSequenceProvider.cs" />
+    <Compile Include="Algorithms\Alignment\ClusterProvider.cs" />
+    <Compile Include="Algorithms\Alignment\DeltaProvider.cs" />
+    <Compile Include="Algorithms\Alignment\NeedlemanWunschAlignerProvider.cs" />
+    <Compile Include="Algorithms\Kmer\IndexerProvider.cs" />
+    <Compile Include="Algorithms\MUMmer\LISLongestIncreasingSubsequenceProvider.cs" />
+    <Compile Include="Algorithms\StringSearch\BoyerMooreProvider.cs" />
+    <Compile Include="Algorithms\SuffixTree\MultiWaySuffixTreeProvider.cs" />
+    <Compile Include="Algorithms\Translation\CodonsProvider.cs" />
+    <Compile Include="Algorithms\Translation\ProteinProvider.cs" />
+    <Compile Include="Algorithms\Translation\TranscriptionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\SequenceProvider.cs" />
     <Compile Include="Providers\StatisticsProvider.cs" />
@@ -59,6 +78,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
