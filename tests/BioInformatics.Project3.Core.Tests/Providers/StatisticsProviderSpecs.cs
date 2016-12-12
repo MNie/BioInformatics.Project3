@@ -10,27 +10,27 @@ namespace BioInformatics.Project3.Core.Tests.Providers
 {
     public class StatisticsProviderSpecs
     {
-        private static Sequence seq;
-        private readonly IStatisticsProvider sut;
+        private static Sequence _seq;
+        private readonly IStatisticsProvider _sut;
         public StatisticsProviderSpecs()
         {
-            seq = new Sequence(DnaAlphabet.Instance.GetMummerAlphabet(), "GGCCC");
+            _seq = new Sequence(DnaAlphabet.Instance.GetMummerAlphabet(), "GGCCC");
             var sequenceProvider = MockRepository.GenerateStub<ISequenceProvider>();
-            sequenceProvider.Stub(x => x.Provide(null, null)).IgnoreArguments().Return(new [] { seq });
-            sut = new StatisticsProvider(sequenceProvider);
+            sequenceProvider.Stub(x => x.Provide(null, null)).IgnoreArguments().Return(new [] { _seq });
+            _sut = new StatisticsProvider(sequenceProvider);
         }
 
         [Fact]
-        public void Should_return_proper_total_cound()
+        public void Should_return_proper_total_count()
         {
-            var result = sut.TotalCount("", "");
+            var result = _sut.TotalCount("", "");
             result.First().ShouldBe(5);
         }
 
         [Fact]
         public void Should_return_proper_symbol_counts()
         {
-            var result = sut.SymbolCounts("", "");
+            var result = _sut.SymbolCounts("", "").ToList();
             result?.First().First().Item1.ShouldBe('C');
             result?.First().Last().Item1.ShouldBe('G');
 

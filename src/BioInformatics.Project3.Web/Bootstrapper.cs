@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using Bio.Algorithms.StringSearch;
+using BioInformatics.Project3.Core.Algorithms.StringSearch;
 using BioInformatics.Project3.Core.Providers;
 using Nancy.Bootstrappers.Autofac;
 
@@ -13,6 +15,8 @@ namespace BioInformatics.Project3.Web
             {
                 x.RegisterType<SequenceProvider>().As<ISequenceProvider>();
                 x.RegisterType<StatisticsProvider>().As<IStatisticsProvider>();
+                x.RegisterType<BoyerMoore>().AsSelf();
+                x.RegisterType<BoyerMooreProvider>().As<IBoyerMooreProvider>();
             });
         }
 

@@ -17,7 +17,6 @@ namespace BioInformatics.Project3.Core.Providers
     {
         public IReadOnlyCollection<ISequence> Provide(string fileName, string content)
         {
-            Bio.Algorithms.SuffixTree.MultiWaySuffixTree
             IReadOnlyCollection<ISequence> sequences = new ISequence[0];
             var byteArray = Encoding.UTF8.GetBytes(content);
             MemoryStream stream = null;
