@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Bio;
-using Bio.Algorithms.StringSearch;
 using Bio.Algorithms.Translation;
 using BioInformatics.Project3.Core.Model;
 using BioInformatics.Project3.Core.Providers;

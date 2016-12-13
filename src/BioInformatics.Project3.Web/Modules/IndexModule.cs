@@ -1,11 +1,16 @@
-﻿using Nancy;
+﻿using BioInformatics.Project3.Core.Model;
+using BioInformatics.Project3.Core.Providers;
+using Nancy;
+using Nancy.ModelBinding;
 
 namespace BioInformatics.Project3.Web.Modules
 {
     public class IndexModule : NancyModule
     {
-        public IndexModule()
+        private readonly ISequenceProvider _provider;
+        public IndexModule(ISequenceProvider provider)
         {
+            _provider = provider;
             Get["/"] = parameters =>
             {
                 return View["index"];
@@ -13,7 +18,8 @@ namespace BioInformatics.Project3.Web.Modules
 
             Post["/Sequence/Parse"] = _ =>
             {
-                return View["index"];
+                var data = this.Bind<SequenceModel>();
+                return Response.AsJson(_provider.Provide(data?.FileName, data?.Content));
             };
         }
     }

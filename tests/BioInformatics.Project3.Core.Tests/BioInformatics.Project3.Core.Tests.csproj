@@ -86,7 +86,6 @@
     <Compile Include="Algorithms\MUMmer\LISLongestIncreasingSubsequenceProviderSpecs.cs" />
     <Compile Include="Algorithms\StringSearch\BoyerMooreProviderSpecs.cs" />
     <Compile Include="Algorithms\SuffixTree\MultiWaySuffixTreeProviderSpecs.cs" />
-    <Compile Include="Algorithms\Translation\CodonsProviderSpecs.cs" />
     <Compile Include="Algorithms\Translation\ProteinProviderSpecs.cs" />
     <Compile Include="Algorithms\Translation\TranscriptionProviderForDnaSpecs.cs" />
     <Compile Include="Algorithms\Translation\TranscriptionProviderForRnaSpecs.cs" />

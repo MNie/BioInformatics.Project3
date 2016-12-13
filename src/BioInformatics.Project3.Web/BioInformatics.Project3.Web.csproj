@@ -110,7 +110,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Modules\Algrithms\ProteinModule.cs" />
+    <Compile Include="Modules\Algrithms\StringSearchModule.cs" />
+    <Compile Include="Modules\Algrithms\TranscriptionModule.cs" />
     <Compile Include="Modules\IndexModule.cs" />
+    <Compile Include="Modules\StatisticsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

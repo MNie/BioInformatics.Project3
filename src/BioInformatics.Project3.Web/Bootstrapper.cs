@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Bio.Algorithms.StringSearch;
 using BioInformatics.Project3.Core.Algorithms.StringSearch;
+using BioInformatics.Project3.Core.Algorithms.Translation;
 using BioInformatics.Project3.Core.Providers;
 using Nancy.Bootstrappers.Autofac;
 
@@ -17,6 +18,8 @@ namespace BioInformatics.Project3.Web
                 x.RegisterType<StatisticsProvider>().As<IStatisticsProvider>();
                 x.RegisterType<BoyerMoore>().AsSelf();
                 x.RegisterType<BoyerMooreProvider>().As<IBoyerMooreProvider>();
+                x.RegisterType<TranscriptionProvider>().As<ITranscriptionProvider>();
+                x.RegisterType<ProteinProvider>().As<IProteinProvider>();
             });
         }
 
