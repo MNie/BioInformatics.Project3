@@ -14,7 +14,7 @@ namespace BioInformatics.Project3.Core.Tests.Providers
         private readonly IStatisticsProvider _sut;
         public StatisticsProviderSpecs()
         {
-            _seq = new Sequence(DnaAlphabet.Instance.GetMummerAlphabet(), "GGCCC");
+            _seq = new Sequence(Alphabets.DNA, "GGCCC");
             var sequenceProvider = MockRepository.GenerateStub<ISequenceProvider>();
             sequenceProvider.Stub(x => x.Provide(null, null)).IgnoreArguments().Return(new [] { _seq });
             _sut = new StatisticsProvider(sequenceProvider);
@@ -36,6 +36,11 @@ namespace BioInformatics.Project3.Core.Tests.Providers
 
             result?.First().First().Item2.ShouldBe(3);
             result?.First().Last().Item2.ShouldBe(2);
+        }
+
+        ~StatisticsProviderSpecs()
+        {
+            _seq = null;
         }
     }
 }

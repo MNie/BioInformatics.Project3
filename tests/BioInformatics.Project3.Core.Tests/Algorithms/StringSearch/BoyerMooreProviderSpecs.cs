@@ -16,7 +16,7 @@ namespace BioInformatics.Project3.Core.Tests.Algorithms.StringSearch
         private readonly IBoyerMooreProvider _sut;
         public BoyerMooreProviderSpecs()
         {
-            _seq = new Sequence(DnaAlphabet.Instance.GetMummerAlphabet(), "GGCCC");
+            _seq = new Sequence(Alphabets.DNA, "GGCCC");
             var sequenceProvider = MockRepository.GenerateStub<ISequenceProvider>();
             sequenceProvider.Stub(x => x.Provide(null, null)).IgnoreArguments().Return(new[] { _seq });
             _sut = new BoyerMooreProvider(sequenceProvider, new BoyerMoore());
@@ -46,6 +46,11 @@ namespace BioInformatics.Project3.Core.Tests.Algorithms.StringSearch
             var result = _sut.GetMatches(null, new[] { "G", "CC" }, startIndex: 3);
             result["G"].Count.ShouldBe(0);
             result["CC"].Count.ShouldBe(1);
+        }
+
+        ~BoyerMooreProviderSpecs()
+        {
+            _seq = null;
         }
     }
 }
