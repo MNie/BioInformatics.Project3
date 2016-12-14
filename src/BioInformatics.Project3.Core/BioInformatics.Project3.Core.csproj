@@ -65,7 +65,6 @@
     <Compile Include="Algorithms\Alignment\DeltaProvider.cs" />
     <Compile Include="Algorithms\Alignment\NeedlemanWunschAlignerProvider.cs" />
     <Compile Include="Algorithms\Kmer\IndexerProvider.cs" />
-    <Compile Include="Algorithms\MUMmer\LISLongestIncreasingSubsequenceProvider.cs" />
     <Compile Include="Algorithms\StringSearch\BoyerMooreProvider.cs" />
     <Compile Include="Algorithms\SuffixTree\MultiWaySuffixTreeProvider.cs" />
     <Compile Include="Algorithms\Translation\ProteinProvider.cs" />

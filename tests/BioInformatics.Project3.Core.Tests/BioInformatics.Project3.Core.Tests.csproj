@@ -83,7 +83,6 @@
     <Compile Include="Algorithms\Alignment\DeltaProviderSpecs.cs" />
     <Compile Include="Algorithms\Alignment\NeedlemanWunschAlignerProviderSpecs.cs" />
     <Compile Include="Algorithms\Kmer\IndexerProviderSpecs.cs" />
-    <Compile Include="Algorithms\MUMmer\LISLongestIncreasingSubsequenceProviderSpecs.cs" />
     <Compile Include="Algorithms\StringSearch\BoyerMooreProviderSpecs.cs" />
     <Compile Include="Algorithms\SuffixTree\MultiWaySuffixTreeProviderSpecs.cs" />
     <Compile Include="Algorithms\Translation\ProteinProviderSpecs.cs" />
