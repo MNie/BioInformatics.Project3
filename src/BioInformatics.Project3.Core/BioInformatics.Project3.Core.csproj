@@ -60,7 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithms\Alignment\AlignedSequenceProvider.cs" />
+    <Compile Include="Algorithms\Alignment\PairwiseSequenceAlignmentProvider.cs" />
     <Compile Include="Algorithms\Alignment\ClusterProvider.cs" />
     <Compile Include="Algorithms\Alignment\DeltaProvider.cs" />
     <Compile Include="Algorithms\Alignment\NeedlemanWunschAlignerProvider.cs" />

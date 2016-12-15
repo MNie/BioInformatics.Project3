@@ -78,7 +78,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithms\Alignment\AlignedSequenceProviderSpecs.cs" />
+    <Compile Include="Algorithms\Alignment\NeedlemanWunschAlignerProviderForTheSameValuesSpecs.cs" />
+    <Compile Include="Algorithms\Alignment\PairwiseSequenceAlignmentProviderSpecs.cs" />
     <Compile Include="Algorithms\Alignment\ClusterProviderSpecs.cs" />
     <Compile Include="Algorithms\Alignment\DeltaProviderSpecs.cs" />
     <Compile Include="Algorithms\Alignment\NeedlemanWunschAlignerProviderSpecs.cs" />

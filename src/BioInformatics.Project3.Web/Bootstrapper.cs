@@ -1,5 +1,7 @@
 ﻿using Autofac;
+using Bio.Algorithms.Alignment;
 using Bio.Algorithms.StringSearch;
+using BioInformatics.Project3.Core.Algorithms.Alignment;
 using BioInformatics.Project3.Core.Algorithms.StringSearch;
 using BioInformatics.Project3.Core.Algorithms.Translation;
 using BioInformatics.Project3.Core.Providers;
@@ -20,6 +22,9 @@ namespace BioInformatics.Project3.Web
                 x.RegisterType<BoyerMooreProvider>().As<IBoyerMooreProvider>();
                 x.RegisterType<TranscriptionProvider>().As<ITranscriptionProvider>();
                 x.RegisterType<ProteinProvider>().As<IProteinProvider>();
+                x.RegisterType<PairwiseSequenceAlignmentProvider>().As<IPairwiseSequenceProvider>();
+                x.RegisterType<NeedlemanWunschAlignerProvider>().As<INeedlemanWunschAlignerProvider>();
+                x.RegisterType<NeedlemanWunschAligner>().AsSelf();
             });
         }
 
