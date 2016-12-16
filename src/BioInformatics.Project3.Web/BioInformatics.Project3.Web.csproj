@@ -110,15 +110,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Modules\Algrithms\ProteinModule.cs" />
-    <Compile Include="Modules\Algrithms\StringSearchModule.cs" />
-    <Compile Include="Modules\Algrithms\TranscriptionModule.cs" />
+    <Compile Include="Modules\Algorithms\Alignment\ClusterModule.cs" />
+    <Compile Include="Modules\Algorithms\Alignment\DeltaModule.cs" />
+    <Compile Include="Modules\Algorithms\Alignment\NeedlemanModule.cs" />
+    <Compile Include="Modules\Algorithms\Alignment\PairwaiseModule.cs" />
+    <Compile Include="Modules\Algorithms\ProteinModule.cs" />
+    <Compile Include="Modules\Algorithms\StringSearchModule.cs" />
+    <Compile Include="Modules\Algorithms\SuffixTreeModule.cs" />
+    <Compile Include="Modules\Algorithms\TranscriptionModule.cs" />
     <Compile Include="Modules\IndexModule.cs" />
     <Compile Include="Modules\StatisticsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -132,6 +139,9 @@
       <Project>{3EA53AD8-2C08-475D-9DC4-2C9F76A30645}</Project>
       <Name>BioInformatics.Project3.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Start\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

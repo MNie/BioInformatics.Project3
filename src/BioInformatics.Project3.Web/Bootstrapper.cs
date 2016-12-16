@@ -3,6 +3,7 @@ using Bio.Algorithms.Alignment;
 using Bio.Algorithms.StringSearch;
 using BioInformatics.Project3.Core.Algorithms.Alignment;
 using BioInformatics.Project3.Core.Algorithms.StringSearch;
+using BioInformatics.Project3.Core.Algorithms.SuffixTree;
 using BioInformatics.Project3.Core.Algorithms.Translation;
 using BioInformatics.Project3.Core.Providers;
 using Nancy.Bootstrappers.Autofac;
@@ -25,6 +26,9 @@ namespace BioInformatics.Project3.Web
                 x.RegisterType<PairwiseSequenceAlignmentProvider>().As<IPairwiseSequenceProvider>();
                 x.RegisterType<NeedlemanWunschAlignerProvider>().As<INeedlemanWunschAlignerProvider>();
                 x.RegisterType<NeedlemanWunschAligner>().AsSelf();
+                x.RegisterType<DeltaProvider>().As<IDeltaProvider>();
+                x.RegisterType<ClusterProvider>().As<IClusterProvider>();
+                x.RegisterType<MultiWaySuffixTreeProvider>().As<IMultiWaySuffixTreeProvider>();
             });
         }
 

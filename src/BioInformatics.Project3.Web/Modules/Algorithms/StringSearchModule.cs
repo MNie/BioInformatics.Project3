@@ -3,7 +3,7 @@ using BioInformatics.Project3.Core.Model;
 using Nancy;
 using Nancy.ModelBinding;
 
-namespace BioInformatics.Project3.Web.Modules.Algrithms
+namespace BioInformatics.Project3.Web.Modules.Algorithms
 {
     public class StringSearchModule : NancyModule
     {
