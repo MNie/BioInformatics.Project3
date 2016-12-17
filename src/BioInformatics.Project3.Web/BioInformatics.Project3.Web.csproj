@@ -114,6 +114,7 @@
     <Compile Include="Modules\Algorithms\Alignment\DeltaModule.cs" />
     <Compile Include="Modules\Algorithms\Alignment\NeedlemanModule.cs" />
     <Compile Include="Modules\Algorithms\Alignment\PairwaiseModule.cs" />
+    <Compile Include="Modules\Algorithms\IndexerModule.cs" />
     <Compile Include="Modules\Algorithms\ProteinModule.cs" />
     <Compile Include="Modules\Algorithms\StringSearchModule.cs" />
     <Compile Include="Modules\Algorithms\SuffixTreeModule.cs" />

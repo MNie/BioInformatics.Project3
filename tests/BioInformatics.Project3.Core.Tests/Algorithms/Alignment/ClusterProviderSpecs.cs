@@ -1,11 +1,8 @@
-﻿using System.Linq;
-using Bio;
-using Bio.Algorithms.Alignment;
+﻿using System;
+using System.Linq;
+using System.Threading;
 using Bio.Algorithms.SuffixTree;
-using Bio.Util;
 using BioInformatics.Project3.Core.Algorithms.Alignment;
-using BioInformatics.Project3.Core.Providers;
-using Rhino.Mocks;
 using Shouldly;
 using Xunit;
 
@@ -34,14 +31,14 @@ namespace BioInformatics.Project3.Core.Tests.Algorithms.Alignment
         public void should_return_false_for_is_good_properties()
         {
             var result = _sut.GetMatches(new[] { _match1, _match2 });
-            result.ForEach(x => x.IsGood.ShouldBeFalse());
+            result.ToList().ForEach(x => x.IsGood.ShouldBeFalse());
         }
 
         [Fact]
         public void should_return_zero_for_all_scores()
         {
             var result = _sut.GetMatches(new[] { _match1, _match2 });
-            result.ForEach(x => x.Score.ShouldBe(0));
+            result.ToList().ForEach(x => x.Score.ShouldBe(0));
         }
 
         [Fact]

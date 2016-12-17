@@ -2,6 +2,7 @@
 using Bio.Algorithms.Alignment;
 using Bio.Algorithms.StringSearch;
 using BioInformatics.Project3.Core.Algorithms.Alignment;
+using BioInformatics.Project3.Core.Algorithms.Kmer;
 using BioInformatics.Project3.Core.Algorithms.StringSearch;
 using BioInformatics.Project3.Core.Algorithms.SuffixTree;
 using BioInformatics.Project3.Core.Algorithms.Translation;
@@ -29,6 +30,7 @@ namespace BioInformatics.Project3.Web
                 x.RegisterType<DeltaProvider>().As<IDeltaProvider>();
                 x.RegisterType<ClusterProvider>().As<IClusterProvider>();
                 x.RegisterType<MultiWaySuffixTreeProvider>().As<IMultiWaySuffixTreeProvider>();
+                x.RegisterType<IndexerProvider>().As<IIndexerProvider>();
             });
         }
 
