@@ -6,18 +6,18 @@ using BioInformatics.Project3.Core.Providers;
 
 namespace BioInformatics.Project3.Core.Algorithms.Alignment
 {
-    public interface INeedlemanWunschAlignerProvider
+    public interface ISmithAlignerProvider
     {
         IList<IPairwiseSequenceAlignment> AlignSequences(SequenceModel[] sequenceData);
         IList<IPairwiseSequenceAlignment> AlignSequencesSimple(SequenceModel[] sequenceData);
     }
 
-    public class NeedlemanWunschAlignerProvider : INeedlemanWunschAlignerProvider
+    public class SmithAlignerProvider : ISmithAlignerProvider
     {
         private readonly ISequenceProvider _provider;
-        private readonly NeedlemanWunschAligner _aligner;
+        private readonly SmithWatermanAligner _aligner;
 
-        public NeedlemanWunschAlignerProvider(ISequenceProvider provider, NeedlemanWunschAligner aligner)
+        public SmithAlignerProvider(ISequenceProvider provider, SmithWatermanAligner aligner)
         {
             _provider = provider;
             _aligner = aligner;

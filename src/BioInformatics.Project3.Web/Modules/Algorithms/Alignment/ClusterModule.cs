@@ -1,7 +1,9 @@
 ﻿using Bio.Algorithms.SuffixTree;
 using BioInformatics.Project3.Core.Algorithms.Alignment;
 using Nancy;
+using Nancy.Extensions;
 using Nancy.ModelBinding;
+using Newtonsoft.Json;
 
 namespace BioInformatics.Project3.Web.Modules.Algorithms.Alignment
 {
@@ -15,13 +17,13 @@ namespace BioInformatics.Project3.Web.Modules.Algorithms.Alignment
 
             Post["/Align/Cluster/Match"] = _ =>
             {
-                var data = this.Bind<Match[]>();
+                var data = (Match[])NancyExtensionToPost.GetData<Match[]>(Request.Query);
                 return Response.AsJson(_provider.GetMatches(data));
             };
 
             Post["/Align/Cluster/IsReverse"] = _ =>
             {
-                var data = this.Bind<Match[]>();
+                var data = (Match[])NancyExtensionToPost.GetData<Match[]>(Request.Query);
                 return Response.AsJson(_provider.IsReverseQueryDirection(data));
             };
         }

@@ -16,13 +16,13 @@ namespace BioInformatics.Project3.Web.Modules.Algorithms
             Post["/Transcription/ToDNA"] = _ =>
             {
                 var data = this.Bind<SequenceModel>();
-                return Response.AsJson(_provider.TranscribeToDNA(data));
+                return Response.AsJson(_provider.TranscribeToDNA(data).ToString());
             };
 
             Post["/Transcription/ToRNA"] = _ =>
             {
                 var data = this.Bind<SequenceModel>();
-                return Response.AsJson(_provider.TranscribeToRNA(data));
+                return Response.AsJson(_provider.TranscribeToRNA(data).ToString());
             };
         }
     }

@@ -15,7 +15,7 @@ namespace BioInformatics.Project3.Web.Modules.Algorithms
             Post["/Protein/Translate"] = _ =>
             {
                 var data = this.Bind<SequenceModel>();
-                return Response.AsJson(_provider.Translate(data));
+                return Response.AsJson(_provider.Translate(data).ToString());
             };
         }
     }

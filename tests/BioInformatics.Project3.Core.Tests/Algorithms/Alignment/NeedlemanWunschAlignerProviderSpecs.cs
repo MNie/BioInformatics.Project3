@@ -2,6 +2,7 @@
 using Bio;
 using Bio.Algorithms.Alignment;
 using BioInformatics.Project3.Core.Algorithms.Alignment;
+using BioInformatics.Project3.Core.Model;
 using BioInformatics.Project3.Core.Providers;
 using Rhino.Mocks;
 using Shouldly;
@@ -26,14 +27,14 @@ namespace BioInformatics.Project3.Core.Tests.Algorithms.Alignment
         [Fact]
         public void should_return_proper_sequences_for_align()
         {
-            var result = _sut.AlignSequences(null);
+            var result = _sut.AlignSequences(new [] {new SequenceModel()});
             result.First().ToString().Trim().ShouldBe("RRCC\r\nGG--\r\nAACC");
         }
 
         [Fact]
         public void should_return_proper_sequences_for_simple_align()
         {
-            var result = _sut.AlignSequencesSimple(null);
+            var result = _sut.AlignSequencesSimple(new[] { new SequenceModel() });
             result.First().ToString().Trim().ShouldBe("RRCC\r\nGG--\r\nAACC");
         }
 

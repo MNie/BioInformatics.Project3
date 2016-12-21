@@ -4,21 +4,21 @@ using Nancy;
 
 namespace BioInformatics.Project3.Web.Modules.Algorithms.Alignment
 {
-    public class NeedlemanModule : NancyModule
+    public class SmithModule : NancyModule
     {
-        private readonly INeedlemanWunschAlignerProvider _provider;
+        private readonly ISmithAlignerProvider _provider;
 
-        public NeedlemanModule(INeedlemanWunschAlignerProvider provider)
+        public SmithModule(ISmithAlignerProvider provider)
         {
             _provider = provider;
 
-            Post["/Align/Needleman/Standard"] = _ =>
+            Post["/Align/Smith/Standard"] = _ =>
             {
                 var data = (SequenceModel[])NancyExtensionToPost.GetData<SequenceModel[]>(Request.Query);
                 return Response.AsJson(_provider.AlignSequences(data));
             };
 
-            Post["/Align/Needleman/Simple"] = _ =>
+            Post["/Align/Smith/Simple"] = _ =>
             {
                 var data = (SequenceModel[])NancyExtensionToPost.GetData<SequenceModel[]>(Request.Query);
                 return Response.AsJson(_provider.AlignSequencesSimple(data));

@@ -78,10 +78,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\Alignment\NucmerAlignerProviderSpecs.cs" />
     <Compile Include="Algorithms\Alignment\PairwiseSequenceAlignmentProviderSpecs.cs" />
     <Compile Include="Algorithms\Alignment\ClusterProviderSpecs.cs" />
     <Compile Include="Algorithms\Alignment\DeltaProviderSpecs.cs" />
     <Compile Include="Algorithms\Alignment\NeedlemanWunschAlignerProviderSpecs.cs" />
+    <Compile Include="Algorithms\Alignment\SmithAlignerProviderSpecs.cs" />
     <Compile Include="Algorithms\Kmer\IndexerProviderSpecs.cs" />
     <Compile Include="Algorithms\StringSearch\BoyerMooreProviderSpecs.cs" />
     <Compile Include="Algorithms\SuffixTree\MultiWaySuffixTreeProviderSpecs.cs" />

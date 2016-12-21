@@ -8,8 +8,8 @@ namespace BioInformatics.Project3.Core.Algorithms.Alignment
 {
     public interface IDeltaProvider
     {
-        IList<long> GetDeltas(SequenceModel sequenceData);
-        bool IsReverseQueryDirection(SequenceModel sequenceData);
+        IList<long> GetDeltas(SequenceModel[] sequenceData);
+        bool IsReverseQueryDirection(SequenceModel[] sequenceData);
     }
 
     public class DeltaProvider : IDeltaProvider
@@ -22,16 +22,16 @@ namespace BioInformatics.Project3.Core.Algorithms.Alignment
             _provider = provider;
         }
 
-        public IList<long> GetDeltas(SequenceModel sequenceData)
+        public IList<long> GetDeltas(SequenceModel[] sequenceData)
         {
-            var sequences = _provider.Provide(sequenceData?.FileName, sequenceData?.Content);
+            var sequences = sequenceData.Select(sequence => _provider.Provide(sequence?.FileName, sequence?.Content).First()).ToList();
             _aligner = new DeltaAlignment(sequences.First(), sequences.Last());
             return _aligner.Deltas;
         }
 
-        public bool IsReverseQueryDirection(SequenceModel sequenceData)
+        public bool IsReverseQueryDirection(SequenceModel[] sequenceData)
         {
-            var sequences = _provider.Provide(sequenceData?.FileName, sequenceData?.Content);
+            var sequences = sequenceData.Select(sequence => _provider.Provide(sequence?.FileName, sequence?.Content).First()).ToList();
             _aligner = new DeltaAlignment(sequences.First(), sequences.Last());
             return _aligner.IsReverseQueryDirection;
         }

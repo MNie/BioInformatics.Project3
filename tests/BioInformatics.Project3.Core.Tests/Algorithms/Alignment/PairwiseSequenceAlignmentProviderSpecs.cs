@@ -1,5 +1,6 @@
 ﻿using Bio;
 using BioInformatics.Project3.Core.Algorithms.Alignment;
+using BioInformatics.Project3.Core.Model;
 using BioInformatics.Project3.Core.Providers;
 using Rhino.Mocks;
 using Shouldly;
@@ -15,7 +16,7 @@ namespace BioInformatics.Project3.Core.Tests.Algorithms.Alignment
         public PairwiseSequenceAlignmentProviderSpecs()
         {
             _seq1 = new Sequence(Alphabets.DNA, "GGCCC");
-            _seq2 = new Sequence(Alphabets.DNA, "AACCC");
+            _seq2 = new Sequence(Alphabets.RNA, "AACCC");
             var sequenceProvider = MockRepository.GenerateStub<ISequenceProvider>();
             sequenceProvider.Stub(x => x.Provide(null, null)).IgnoreArguments().Return(new[] { _seq1, _seq2 });
             _sut = new PairwiseSequenceAlignmentProvider(sequenceProvider);
@@ -24,7 +25,7 @@ namespace BioInformatics.Project3.Core.Tests.Algorithms.Alignment
         [Fact]
         public void should_return_empty_metadata_for_sequences()
         {
-            var result = _sut.GetMetadata(null);
+            var result = _sut.GetMetadata(new[] {new SequenceModel()});
             result.ShouldBeEmpty();
         }
     }

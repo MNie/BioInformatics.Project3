@@ -1,4 +1,5 @@
-﻿using BioInformatics.Project3.Core.Model;
+﻿using System.Linq;
+using BioInformatics.Project3.Core.Model;
 using BioInformatics.Project3.Core.Providers;
 using Nancy;
 using Nancy.ModelBinding;
@@ -11,15 +12,12 @@ namespace BioInformatics.Project3.Web.Modules
         public IndexModule(ISequenceProvider provider)
         {
             _provider = provider;
-            Get["/"] = parameters =>
-            {
-                return View["index"];
-            };
+            Get["/"] = parameters => View["index"];
 
             Post["/Sequence/Parse"] = _ =>
             {
                 var data = this.Bind<SequenceModel>();
-                return Response.AsJson(_provider.Provide(data?.FileName, data?.Content));
+                return Response.AsJson(_provider.Provide(data?.FileName, data?.Content).Select(x => x.ToString()));
             };
         }
     }

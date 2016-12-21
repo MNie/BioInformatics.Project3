@@ -27,6 +27,10 @@ namespace BioInformatics.Project3.Web
                 x.RegisterType<PairwiseSequenceAlignmentProvider>().As<IPairwiseSequenceProvider>();
                 x.RegisterType<NeedlemanWunschAlignerProvider>().As<INeedlemanWunschAlignerProvider>();
                 x.RegisterType<NeedlemanWunschAligner>().AsSelf();
+                x.RegisterType<SmithAlignerProvider>().As<ISmithAlignerProvider>();
+                x.RegisterType<SmithWatermanAligner>().AsSelf();
+                x.RegisterType<NucmerAlignerProvider>().As<INucmerAlignerProvider>();
+                x.RegisterType<NucmerPairwiseAligner>().AsSelf();
                 x.RegisterType<DeltaProvider>().As<IDeltaProvider>();
                 x.RegisterType<ClusterProvider>().As<IClusterProvider>();
                 x.RegisterType<MultiWaySuffixTreeProvider>().As<IMultiWaySuffixTreeProvider>();

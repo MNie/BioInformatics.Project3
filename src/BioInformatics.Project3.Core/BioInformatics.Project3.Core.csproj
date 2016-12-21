@@ -50,6 +50,10 @@
     <Reference Include="Bio.Platform.Helpers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NetBioCore.PCL.2.0.150722\lib\net45\Bio.Platform.Helpers.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -60,10 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\Alignment\NucmerAlignerProvider.cs" />
     <Compile Include="Algorithms\Alignment\PairwiseSequenceAlignmentProvider.cs" />
     <Compile Include="Algorithms\Alignment\ClusterProvider.cs" />
     <Compile Include="Algorithms\Alignment\DeltaProvider.cs" />
     <Compile Include="Algorithms\Alignment\NeedlemanWunschAlignerProvider.cs" />
+    <Compile Include="Algorithms\Alignment\SmithAlignerProvider.cs" />
     <Compile Include="Algorithms\Kmer\IndexerProvider.cs" />
     <Compile Include="Algorithms\StringSearch\BoyerMooreProvider.cs" />
     <Compile Include="Algorithms\SuffixTree\MultiWaySuffixTreeProvider.cs" />

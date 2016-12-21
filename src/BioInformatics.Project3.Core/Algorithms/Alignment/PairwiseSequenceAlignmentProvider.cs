@@ -10,7 +10,7 @@ namespace BioInformatics.Project3.Core.Algorithms.Alignment
 {
     public interface IPairwiseSequenceProvider
     {
-        IDictionary<string, object> GetMetadata(SequenceModel sequenceData);
+        IDictionary<string, object> GetMetadata(SequenceModel[] sequenceData);
     }
 
     public class PairwiseSequenceAlignmentProvider : IPairwiseSequenceProvider
@@ -22,10 +22,10 @@ namespace BioInformatics.Project3.Core.Algorithms.Alignment
             _provider = provider;
         }
 
-        public IDictionary<string, object> GetMetadata(SequenceModel sequenceData)
+        public IDictionary<string, object> GetMetadata(SequenceModel[] sequenceData)
         {
-            var sequence = _provider.Provide(sequenceData?.FileName, sequenceData?.Content);
-            var alignment = new PairwiseSequenceAlignment(sequence.First(), sequence.Last());
+            var sequences = sequenceData.SelectMany(sequence => _provider.Provide(sequence?.FileName, sequence?.Content)).ToList();
+            var alignment = new PairwiseSequenceAlignment(sequences.First(), sequences.Last());
             return alignment.Metadata;
         }
     }

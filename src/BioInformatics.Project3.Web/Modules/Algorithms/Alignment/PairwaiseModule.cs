@@ -15,7 +15,7 @@ namespace BioInformatics.Project3.Web.Modules.Algorithms.Alignment
 
             Post["/Align/Pairwise/Metadata"] = _ =>
             {
-                var data = this.Bind<SequenceModel>();
+                var data = (SequenceModel[])NancyExtensionToPost.GetData<SequenceModel[]>(Request.Query);
                 return Response.AsJson(_provider.GetMetadata(data));
             };
         }
